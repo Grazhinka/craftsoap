@@ -164,6 +164,9 @@ body{
     .inst{
         bottom: 5px;
     }
+    .podrobnee img{
+        width: 200px;
+    }
 
 }
 @media (max-width: 380px){
