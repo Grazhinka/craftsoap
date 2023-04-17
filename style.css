@@ -166,3 +166,11 @@ body{
     }
 
 }
+@media (max-width: 380px){
+    .knopkiKategorij button{
+        margin: 3px;
+        padding: 2px;
+        min-width: 90px;
+        max-width: 160px;
+    }
+}
