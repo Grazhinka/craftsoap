@@ -8,7 +8,7 @@ const ishodnyeDannye=[
        kratkoeOpisanie:'Тыква и корица',
        img:'/img/mylo3.jpg',
        category:categorii[0]+' '+categorii[1],
-       ves:'⁓ 100 г.',
+       ves:'100 г.',
        cena:'10 BYN',
        polnoeOpisanie:'Сварено на пюре тыквы с добавлением пряностей и эфирных масел корицы'
     },
@@ -17,7 +17,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'GREEN',
         img:'/img/mylo4.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 120 г.',
+        ves:'120 г.',
         cena:'12 BYN',
         polnoeOpisanie:'Сварено на пюре петрушки с эфирным маслом розмарина'
     },
@@ -26,7 +26,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Лаванда и рикотта',
         img:'/img/mylo5.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 90 г.',
+        ves:'90 г.',
         cena:'10 BYN',
         polnoeOpisanie:'Сварено с добавлением мягкого сыра, имеет лавандово-сливочный запах'
     },
@@ -35,7 +35,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Чили и апельсин',
         img:'/img/cilul.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 120 г.',
+        ves:'120 г.',
         cena:'12 BYN',
         polnoeOpisanie:'Массажное антицеллюлитное мыло с молотым перцем и цедрой апельсина'
     },
@@ -44,7 +44,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Чайное дерево',
         img:'/img/mylo2.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 120 г.',
+        ves:'120 г.',
         cena:'12 BYN',
         polnoeOpisanie:'С углем и черной глиной, эфирное масло австралийского чайного дерева, базилика, корицы, кумина'
     },
@@ -53,7 +53,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Кастильское',
         img:'/img/mylo6.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 120 г.',
+        ves:'120 г.',
         cena:'13 BYN',
         polnoeOpisanie:'100% масло оливы прямого холодного отжима'
     },
@@ -62,7 +62,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Овсяное массажное',
         img:'/img/mylo2.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 120 г.',
+        ves:'120 г.',
         cena:'12 BYN',
         polnoeOpisanie:'...'
     },
@@ -71,7 +71,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Мандарин и мак',
         img:'/img/mylo2.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 120 г.',
+        ves:'120 г.',
         cena:'12 BYN',
         polnoeOpisanie:'С цедрой и эфирным маслом мандарина, семена мака как мягкий скраб '
     },
@@ -80,7 +80,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Роза и гранат',
         img:'/img/mylo2.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 100 г.',
+        ves:'100 г.',
         cena:'11 BYN',
         polnoeOpisanie:'Сварено на гранатовом соке, с розовой глиной, эфирными маслами розы и герани'
     },
@@ -89,7 +89,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Пивное',
         img:'/img/mylo2.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 110 г.',
+        ves:'110 г.',
         cena:'11 BYN',
         polnoeOpisanie:'Сварено на темном бархатном пиве'
     },
@@ -98,7 +98,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Миндальное молочко',
         img:'/img/mylo2.jpg',
         category:categorii[0]+' '+categorii[1],
-        ves:'⁓ 100 г.',
+        ves:'100 г.',
         cena:'11 BYN',
         polnoeOpisanie:'Сварено на миндальном молоке с маслом сладкого миндаля и молотым миндалем'
     },
@@ -107,7 +107,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Цитрусовый',
         img:'/img/suhoish.jpg',
         category:categorii[0]+' '+categorii[2],
-        ves:'⁓ 80 г.',
+        ves:'80 г.',
         cena:'25 BYN',
         polnoeOpisanie:'Для склонных к жирности волос'
     },
@@ -116,7 +116,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Лаванда и кокос',
         img:'/img/suhoish.jpg',
         category:categorii[0]+' '+categorii[2],
-        ves:'⁓ 80 г.',
+        ves:'80 г.',
         cena:'25 BYN',
         polnoeOpisanie:'Для сухих и поврежденных волос'
     },
@@ -125,7 +125,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'шот для ванн',
         img:'/img/molochko.jpg',
         category:categorii[0]+' '+categorii[3],
-        ves:'⁓ колба 60 мл',
+        ves:'колба 60 мл',
         cena:'10 BYN',
         polnoeOpisanie:'Ингридиенты максимально приятные для вашей кожи'
     },
@@ -134,7 +134,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'и не только',
         img:'/img/balsam.jpg',
         category:categorii[0]+' '+categorii[4],
-        ves:'⁓ баночка',
+        ves:'баночка',
         cena:'10 BYN',
         polnoeOpisanie:'В состав входит масло какао н/ф, масло кокоса ev, мацерат календулы на миндальном масле, масло кунжута, ланолин, воск рисовых отрубей'
     },
@@ -143,7 +143,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'',
         img:'/img/balsam2.jpg',
         category:categorii[0]+' '+categorii[4],
-        ves:'⁓ баночка',
+        ves:'баночка',
         cena:'10 BYN',
         polnoeOpisanie:'В состав входит сахар, масло жожоба, пчелиный отбеленный воск, глицерин, витамин Е'
     },
@@ -152,7 +152,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'очень питательный',
         img:'/img/balsam3.jpg',
         category:categorii[0]+' '+categorii[4],
-        ves:'⁓ туба',
+        ves:'туба',
         cena:'8 BYN',
         polnoeOpisanie:'В состав входит масло какао н/ф, масло кокоса, пчелиный воск, масло миндаля сладкого, витамин Е'  
     },
@@ -161,7 +161,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'Белый шоколад',
         img:'/img/butter.jpg',
         category:categorii[0]+' '+categorii[5],
-        ves:'⁓ объем 200 мл',
+        ves:'объем 200 мл',
         cena:'30 BYN',
         polnoeOpisanie:'Суфле - это взбитые до состояния облачка натуральные масла: ~ ши - питает кожу и помогает удерживать влагу, делая кожу невероятно нежной и бархатистой ~ масло какао - создаёт на коже дышащую плёнку, защищая от внешних воздействий ~ миндальное масло - улучшает состояние барьерных функций кожи и эффективно при профилактике растяжек ~ и витамин Е - лучший антиоксидант для нашей кожи'
     },
@@ -170,7 +170,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'сахарные',
         img:'/img/sahar2.jpg',
         category:categorii[0]+' '+categorii[6],
-        ves:'⁓ 3*30 г',
+        ves:'3*30 г',
         cena:'4 BYN',
         polnoeOpisanie:'В таком шарике : стружка из натурального мыла - для очищения, сахар - для мягкой эксфолиации, миндальное масло - для питания кожи'
     },
@@ -179,7 +179,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'густое травное мыло-скраб',
         img:'/img/beldi.png',
         category:categorii[0]+' '+categorii[7],
-        ves:'⁓ 200 мл',
+        ves:'200 мл',
         cena:'30 BYN',
         polnoeOpisanie:'Здесь сила весенних и летних трав, собранных мной с любовью и бережно высушенных. Травы измельчены и вмешаны в натуральное мягкое мыло, сваренное из растительных масел, сдобрены неомыленным маслом ши и оливы - для дополнительного ухода и питания кожи, эфирные масла эвкалипта и мяты дополняют травный аромат и всю эту аутентичность '
     },
@@ -188,7 +188,7 @@ const ishodnyeDannye=[
         kratkoeOpisanie:'подарочные',
         img:'/img/nabor1.jpg',
         category:categorii[0]+' '+categorii[8],
-        ves:'⁓ на выбор',
+        ves:'на выбор',
         cena:'от 20 BYN',
         polnoeOpisanie:'Готовые варианты подарков с доставкой в наличии. Выбирай готовый или создавай свой!'
     },
@@ -247,6 +247,11 @@ function smenaCytaty() {
         i=0
     }    
     cytata.textContent=cytaty[i]
+
+    gsap.from(".cytata", {
+    duration: 0.5, 
+    opacity: 0,  
+    });    
 }
 
 setInterval(smenaCytaty,5000)
