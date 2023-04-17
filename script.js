@@ -306,7 +306,6 @@ podrobnosti.forEach((it,index)=>{
         knopkaZakrytija.textContent='закрыть'
         it.parentElement.classList.add('podrobnee')
         it.parentElement.appendChild(knopkaZakrytija)
-        it.parentElement.querySelector('h2').before(knopkaZakrytija)
 
         const opisanie=document.createElement('p')
         opisanie.textContent=ishodnyeDannye[index].polnoeOpisanie
