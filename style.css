@@ -1,0 +1,168 @@
+body{
+    font-family: 'Comfortaa', cursive;
+}
+.zagolovok{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zagolovok img{
+    width: 70px;
+}
+
+.zagolovok h1{
+    
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+    font-size: 40px;
+    margin: 2px;
+}
+.zagolovok p{
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.kartinkiVDvizhenii{
+    display: flex;
+    position: relative;
+}
+
+.kartinkaFonom{
+    background-position:center;
+    background-size: cover;
+    border-right: 1px solid white;
+    flex: 1;
+    height: 50vh;
+    transition: all 1.5s ease;
+}
+
+.uvelichenie{
+    flex: 4;
+}
+
+.cytataDiv{
+    margin: auto;
+    background: rgba(255, 255, 255, 0.907);
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+    overflow: auto;
+    top: 40%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cytata{
+    text-align: center;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+
+.vyborKategorii{
+    font-size: 1px;
+    color: white;
+}
+
+.knopkiKategorij{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+}
+
+.knopkiKategorij button{
+    flex: 1; 
+    padding: 5px; 
+}
+
+.catalog{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.catalog div{
+    border: 1px solid rgba(0, 0, 0, 0.363);
+    min-width: 300px;
+    margin: 5px;
+    padding: 5px;  
+}
+
+.catalog img{
+    box-shadow: 17.5px 17.5px 0px #fff, 18px 18px 0px #0000007c, 18px 17px 0px #0000007f, 17px 18px 0px #00000086;
+}
+
+.podrobnee{
+    border: 1px solid red;
+    z-index: 99;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -5px;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.podrobnee img{
+    width: 300px;
+    box-shadow: none
+}
+
+.knopkiKategorij{
+    margin: 10px;
+}
+
+.knopkiKategorij button, .podrobnosti, .podrobnee button{
+    font-family: 'Comfortaa', cursive;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.605);
+    border-radius: 5px;
+    background-color:white;
+    padding: 5px;
+    min-width: 160px;
+    max-width: 160px;
+    min-height: 28px;
+    font-size:13px;
+}
+
+.knopkiKategorij button:hover, .podrobnosti:hover, .podrobnee button:hover{
+    transition: all 0.5s ease;
+    font-size:14px;
+    box-shadow: 10.5px 10.5px 0px #e9e9e9;
+    padding: 4px;
+}
+.podrobnosti{
+    margin-bottom: 10px;
+}
+
+.inst{
+    position: fixed;
+    z-index: 90;
+}
+
+.footer{
+    text-align: center;
+    margin: 0px;
+    padding-top: 10px;
+    background: linear-gradient(rgb(169, 169, 169), 3%, rgb(255, 255, 255));
+}
+
+
+@media (max-width: 470px){
+    .kartinkaFonom{
+        height: 30vh;
+    }
+    .knopkiKategorij{
+        position: sticky;
+        top: 0; 
+        background-color: white;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+        z-index: 98;
+    }
+    .inst{
+        bottom: 5px;
+    }
+
+}
