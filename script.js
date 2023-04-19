@@ -1,5 +1,7 @@
+const ssylka='https://db-soap.glitch.me/'
+
 async function dannyeCataloga(){
-    const adv = await fetch('https://db-soap.glitch.me/craftsoap');
+    const adv = await fetch(`${ssylka}craftsoap`);
     const ishodnyeDannye = await adv.json();
     verstkaKataloga(ishodnyeDannye)
     podrobnoeOpisanieCartochki(ishodnyeDannye)
@@ -12,7 +14,7 @@ dannyeCataloga().then(()=>{
 )
 
 async function ostalnyeDannye(){
-    const adv = await fetch('https://db-soap.glitch.me/craftsoap/dopinfo');
+    const adv = await fetch(`${ssylka}craftsoap/dopinfo`);
     const dopInfo = await adv.json();
     const categorii=dopInfo[0]
     const kartinkiDlaOboev=dopInfo[1]
@@ -39,7 +41,7 @@ function oboi(kartinkiDlaOboev){
         <div class='kartinkaFonom'>
         </div>` 
         let kartinkiFonom=kartinkiVDvizhenii.querySelectorAll('.kartinkaFonom')
-        kartinkiFonom[i].style.backgroundImage=`url(${kartinkiDlaOboev[i]})`
+        kartinkiFonom[i].style.backgroundImage=`url(${ssylka}/${kartinkiDlaOboev[i]})`
     }
 
     const kartinkiFonom = document.querySelectorAll('.kartinkaFonom');
@@ -105,7 +107,7 @@ function verstkaKataloga(ishodnyeDannye){
             <p>${ishodnyeDannye[i].kratkoeOpisanie}</p>
             <p>${ishodnyeDannye[i].ves}</p>
             <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
-            <img src='${ishodnyeDannye[i].img}' width='100px'/>
+            <img src=${ssylka}/${ishodnyeDannye[i].image} width='100px'/>
             <h4>${ishodnyeDannye[i].cena}</h4>
             <button class='podrobnosti'>Подробнее</button>
         `
