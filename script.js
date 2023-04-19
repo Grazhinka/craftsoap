@@ -1,14 +1,14 @@
-
 async function dannyeCataloga(){
-  const adv = await fetch('https://db-soap.glitch.me/craftsoap');
-  const ishodnyeDannye = await adv.json();
-  verstkaKataloga(ishodnyeDannye)
+    const adv = await fetch('https://db-soap.glitch.me/craftsoap');
+    const ishodnyeDannye = await adv.json();
+    verstkaKataloga(ishodnyeDannye)
     podrobnoeOpisanieCartochki(ishodnyeDannye)
-    console.log('вызвалось основная')
 }
+
 dannyeCataloga().then(()=>{
     sortirovkaPoCategorijam()
-    animacija()}
+    animacija()
+  }
 )
 
 async function ostalnyeDannye(){
@@ -16,14 +16,16 @@ async function ostalnyeDannye(){
     const dopInfo = await adv.json();
     const categorii=dopInfo[0]
     const kartinkiDlaOboev=dopInfo[1]
-    knopkiKategorij(categorii)
-    oboi(kartinkiDlaOboev)
     const cytaty=dopInfo[2]
+
+    knopkiKategorij(categorii)
+    oboi(kartinkiDlaOboev)  
     frazy(cytaty) 
-    console.log('вызвалось дополнить')
+}
+
+ostalnyeDannye().then(()=>{
+    sortirovkaPoCategorijam()
   }
-  ostalnyeDannye().then(()=>{
-    sortirovkaPoCategorijam()}
 )
 
 
@@ -102,7 +104,7 @@ function verstkaKataloga(ishodnyeDannye){
             <h2>${ishodnyeDannye[i].title}</h2>
             <p>${ishodnyeDannye[i].kratkoeOpisanie}</p>
             <p>${ishodnyeDannye[i].ves}</p>
-            <h5 class='vyborKategorii'>${ishodnyeDannye[i].dopInfo}</h5>
+            <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
             <img src='${ishodnyeDannye[i].img}' width='100px'/>
             <h4>${ishodnyeDannye[i].cena}</h4>
             <button class='podrobnosti'>Подробнее</button>
@@ -118,7 +120,6 @@ function sortirovkaPoCategorijam(){
 
     document.querySelectorAll('.kategorijaKnopka').forEach(item=>{    
         item.addEventListener('click',()=>{
-            console.log(item)
             vyborKategorii.forEach(it=>{
                 it.textContent.includes(item.textContent) ? (it.parentElement.style.display ='block') : (it.parentElement.style.display = 'none')
             })
