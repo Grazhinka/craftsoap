@@ -1,6 +1,6 @@
 
 async function dannyeCataloga(){
-  const adv = await fetch('https://db-soap.glitch.me/api/product');
+  const adv = await fetch('https://db-soap.glitch.me/craftsoap');
   const ishodnyeDannye = await adv.json();
   verstkaKataloga(ishodnyeDannye)
     podrobnoeOpisanieCartochki(ishodnyeDannye)
@@ -12,13 +12,13 @@ dannyeCataloga().then(()=>{
 )
 
 async function ostalnyeDannye(){
-    const adv = await fetch('https://db-soap.glitch.me/api/product/category');
-    const category = await adv.json();
-    const categorii=category[0]
-    const kartinkiDlaOboev=category[1]
+    const adv = await fetch('https://db-soap.glitch.me/craftsoap/dopinfo');
+    const dopInfo = await adv.json();
+    const categorii=dopInfo[0]
+    const kartinkiDlaOboev=dopInfo[1]
     knopkiKategorij(categorii)
     oboi(kartinkiDlaOboev)
-    const cytaty=category[2]
+    const cytaty=dopInfo[2]
     frazy(cytaty) 
     console.log('вызвалось дополнить')
   }
@@ -32,30 +32,28 @@ async function ostalnyeDannye(){
 function oboi(kartinkiDlaOboev){
     let kartinkiVDvizhenii = document.querySelector('.kartinkiVDvizhenii')
 
-
-for(let i=0;i<kartinkiDlaOboev.length;i++){
-    kartinkiVDvizhenii.innerHTML+=`
-    <div class='kartinkaFonom'>
-    </div>` 
-    let kartinkiFonom=kartinkiVDvizhenii.querySelectorAll('.kartinkaFonom')
-    kartinkiFonom[i].style.backgroundImage=`url(${kartinkiDlaOboev[i]})`
-}
-
-const kartinkiFonom = document.querySelectorAll('.kartinkaFonom');
-kartinkiFonom.forEach(item=>{
-    item.addEventListener('mouseover', ()=> {
-        removeFocus();
-        item.classList.add('uvelichenie');
-    })
-
-    function removeFocus(){
-        kartinkiFonom.forEach(item=>{
-            item.classList.remove('uvelichenie');
-        })
+    for(let i=0;i<kartinkiDlaOboev.length;i++){
+        kartinkiVDvizhenii.innerHTML+=`
+        <div class='kartinkaFonom'>
+        </div>` 
+        let kartinkiFonom=kartinkiVDvizhenii.querySelectorAll('.kartinkaFonom')
+        kartinkiFonom[i].style.backgroundImage=`url(${kartinkiDlaOboev[i]})`
     }
-})
-}
 
+    const kartinkiFonom = document.querySelectorAll('.kartinkaFonom');
+    kartinkiFonom.forEach(item=>{
+        item.addEventListener('mouseover', ()=> {
+            removeFocus();
+            item.classList.add('uvelichenie');
+        })
+
+        function removeFocus(){
+            kartinkiFonom.forEach(item=>{
+                item.classList.remove('uvelichenie');
+            })
+        }
+    })
+}
 
 //-----------------------------------------------------------------текст на картинках в движении------------------------------------------------------------------
 
@@ -104,7 +102,7 @@ function verstkaKataloga(ishodnyeDannye){
             <h2>${ishodnyeDannye[i].title}</h2>
             <p>${ishodnyeDannye[i].kratkoeOpisanie}</p>
             <p>${ishodnyeDannye[i].ves}</p>
-            <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
+            <h5 class='vyborKategorii'>${ishodnyeDannye[i].dopInfo}</h5>
             <img src='${ishodnyeDannye[i].img}' width='100px'/>
             <h4>${ishodnyeDannye[i].cena}</h4>
             <button class='podrobnosti'>Подробнее</button>
@@ -117,7 +115,6 @@ function verstkaKataloga(ishodnyeDannye){
 
 function sortirovkaPoCategorijam(){
     let vyborKategorii=document.querySelectorAll('.vyborKategorii')
-    
 
     document.querySelectorAll('.kategorijaKnopka').forEach(item=>{    
         item.addEventListener('click',()=>{
