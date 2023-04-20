@@ -1,3 +1,4 @@
+
 const ssylka='https://db-soap.glitch.me/'
 
 async function dannyeCataloga(){
@@ -5,32 +6,23 @@ async function dannyeCataloga(){
     const ishodnyeDannye = await adv.json();
     verstkaKataloga(ishodnyeDannye)
     podrobnoeOpisanieCartochki(ishodnyeDannye)
-}
-
-dannyeCataloga().then(()=>{
-    sortirovkaPoCategorijam()
-    jk()
-    animacija()
-  }
-)
-
-async function ostalnyeDannye(){
-    const adv = await fetch(`${ssylka}craftsoap/dopinfo`);
-    const dopInfo = await adv.json();
+    const adv1 = await fetch(`${ssylka}craftsoap/dopinfo`);
+    const dopInfo = await adv1.json();
     const categorii=dopInfo[0]
     const kartinkiDlaOboev=dopInfo[1]
     const cytaty=dopInfo[2]
 
     knopkiKategorij(categorii)
     oboi(kartinkiDlaOboev)  
-    frazy(cytaty) 
+    frazy(cytaty)
 }
 
-ostalnyeDannye().then(()=>{
+dannyeCataloga().then(()=>{
     sortirovkaPoCategorijam()
-    jk()
+    animacija()
   }
 )
+
 
 
 //-----------------------------------------------------------------картинки в движении------------------------------------------------------------------
@@ -202,30 +194,3 @@ for (let smoothLink of smoothLinks) {
         });
     });
 };
-
-
-function jk() {
-    window.onscroll = function() {myFunction()};
-
-var navbar = document.querySelector('.knopkiKategorij');
-var sticky = navbar.offsetTop;
-console.log(sticky)
-
-var footer = document.querySelector(".oplata");
-var sticky2 = footer.offsetTop;
-console.log(sticky2)
-
-function myFunction() 
-{
-    console.log(window.pageYOffset )
-  if (window.pageYOffset >= sticky) 
-  {
-    navbar.classList.add("sticky");
-  } 
-  
-  if ((window.pageYOffset < sticky) || (window.pageYOffset >= sticky2)) 
-  {
-    navbar.classList.remove("sticky");
-  }
-}
-}
