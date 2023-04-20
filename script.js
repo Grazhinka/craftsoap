@@ -75,7 +75,7 @@ function frazy(cytaty){
 
         gsap.from(".cytata", {
         duration: 0.5, 
-        opacity: 0,  
+        opacity: 0.5,  
         });    
     }
 
@@ -104,7 +104,7 @@ function verstkaKataloga(ishodnyeDannye){
         const kartochkaKataloga=document.createElement('div')
         kartochkaKataloga.innerHTML=`
             <h2>${ishodnyeDannye[i].title}</h2>
-            <p>${ishodnyeDannye[i].kratkoeOpisanie}</p>
+            <p class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</p>
             <p>${ishodnyeDannye[i].ves}</p>
             <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
             <img src=${ssylka}/${ishodnyeDannye[i].image} width='100px'/>
@@ -144,14 +144,23 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
             it.parentElement.appendChild(knopkaZakrytija)
 
             const opisanie=document.createElement('p')
-            opisanie.textContent=ishodnyeDannye[index].polnoeOpisanie
+            opisanie.innerHTML=`
+            <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}`
             it.parentElement.appendChild(opisanie)
             it.parentElement.querySelector('h4').after(opisanie)
+
+
+            const sostav=document.createElement('p')
+            sostav.innerHTML=`
+            <span>Состав: </span>${ishodnyeDannye[index].sostav}`
+            it.parentElement.appendChild(sostav)
+            it.parentElement.querySelector('h4').after(sostav)
 
             knopkaZakrytija.addEventListener('click',()=>{
                 it.parentElement.classList.remove('podrobnee')
                 it.parentElement.removeChild(knopkaZakrytija)
                 it.parentElement.removeChild(opisanie)
+                it.parentElement.removeChild(sostav)
                 it.style.display='block'
                 it.style.margin='0 auto'
             })
@@ -179,3 +188,15 @@ function animacija(){
 }
 
 
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
+
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+};
