@@ -142,7 +142,12 @@ nav a:hover{
 .knopkiKategorij{
     margin: 10px;
     position: sticky;
+    top: 0; 
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    z-index: 98;
 }
+
 .knopkiKategorij button, .podrobnosti, .podrobnee button{
     font-family: 'Neucha', cursive;
     margin: 5px;
@@ -197,13 +202,14 @@ nav a:hover{
     padding: 3px;
 }
 
-
-.sticky {
+.naverh{
     position: fixed;
-    top: -10px;
-    background-color: white;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+    bottom: 3px;
+    left: 3px;
+    text-decoration: none;
+    border: 1px solid rgb(219, 152, 52);
+    border-radius: 20px;
+    padding: 5px;
 }
 
 
@@ -212,13 +218,7 @@ nav a:hover{
     .kartinkaFonom{
         height: 30vh;
     }
-    .knopkiKategorij{
-        /* position: sticky; */
-        top: 0; 
-        background-color: white;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.226);
-        z-index: 98;
-    }
+
     .inst{
         bottom: 5px;
     }
@@ -232,9 +232,6 @@ nav a:hover{
 
 }
 @media (max-width: 380px){
-    .sticky {
-        top: -10px;
-    }
     .knopkiKategorij button{
         margin: 3px;
         padding: 2px;
