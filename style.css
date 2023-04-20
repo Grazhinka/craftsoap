@@ -197,13 +197,21 @@ nav a:hover{
 }
 
 
+.sticky {
+    position: fixed;
+    top: -10px;
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+
+
 
 @media (max-width: 470px){
     .kartinkaFonom{
         height: 30vh;
     }
     .knopkiKategorij{
-        position: sticky;
+        /* position: sticky; */
         top: 0; 
         background-color: white;
         border-bottom: 1px solid rgba(0, 0, 0, 0.226);
@@ -215,10 +223,16 @@ nav a:hover{
     .podrobnee img{
         width: 200px;
     }
+    .cytataDiv{
+        top: 30%;
+    }
 
 
 }
 @media (max-width: 380px){
+    .sticky {
+        top: -10px;
+    }
     .knopkiKategorij button{
         margin: 3px;
         padding: 2px;

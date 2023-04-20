@@ -9,6 +9,7 @@ async function dannyeCataloga(){
 
 dannyeCataloga().then(()=>{
     sortirovkaPoCategorijam()
+    jk()
     animacija()
   }
 )
@@ -27,6 +28,7 @@ async function ostalnyeDannye(){
 
 ostalnyeDannye().then(()=>{
     sortirovkaPoCategorijam()
+    jk()
   }
 )
 
@@ -200,3 +202,30 @@ for (let smoothLink of smoothLinks) {
         });
     });
 };
+
+
+function jk() {
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.querySelector('.knopkiKategorij');
+var sticky = navbar.offsetTop;
+console.log(sticky)
+
+var footer = document.querySelector(".oplata");
+var sticky2 = footer.offsetTop;
+console.log(sticky2)
+
+function myFunction() 
+{
+    console.log(window.pageYOffset )
+  if (window.pageYOffset >= sticky) 
+  {
+    navbar.classList.add("sticky");
+  } 
+  
+  if ((window.pageYOffset < sticky) || (window.pageYOffset >= sticky2)) 
+  {
+    navbar.classList.remove("sticky");
+  }
+}
+}
