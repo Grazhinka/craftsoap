@@ -1,5 +1,6 @@
 
-const ssylka='https://db-soap.glitch.me/'
+const ssylka='https://db-craft-soap.glitch.me/'
+//const ssylka='https://db-soap.glitch.me/'
 
 async function dannyeCataloga(){
     const adv = await fetch(`${ssylka}craftsoap`);
@@ -35,7 +36,8 @@ function oboi(kartinkiDlaOboev){
         <div class='kartinkaFonom'>
         </div>` 
         let kartinkiFonom=kartinkiVDvizhenii.querySelectorAll('.kartinkaFonom')
-        kartinkiFonom[i].style.backgroundImage=`url(${ssylka}/${kartinkiDlaOboev[i]})`
+        //kartinkiFonom[i].style.backgroundImage=`url(${ssylka}/${kartinkiDlaOboev[i]})`
+        kartinkiFonom[i].style.backgroundImage=`url(${kartinkiDlaOboev[i]})`
     }
 
     const kartinkiFonom = document.querySelectorAll('.kartinkaFonom');
@@ -101,13 +103,14 @@ function verstkaKataloga(ishodnyeDannye){
             <p class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</p>
             <p>${ishodnyeDannye[i].ves}</p>
             <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
-            <img src=${ssylka}/${ishodnyeDannye[i].image} width='100px'/>
+            <img src=${ishodnyeDannye[i].image} width='100px'/>
             <h4>${ishodnyeDannye[i].cena}</h4>
             <button class='podrobnosti'>Подробнее</button>
         `
         catalog.appendChild(kartochkaKataloga)
     }
 }
+//<img src=${ssylka}/${ishodnyeDannye[i].image} width='100px'/>
 //-----------------------------------------------------------------сортировка по категориям------------------------------------------------------------------
 
 
