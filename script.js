@@ -16,10 +16,10 @@ async function dannyeCataloga(){
     frazy(cytaty)
     knopkiKategorij(categorii)
     verstkaKataloga(ishodnyeDannye)  
+    podrobnoeOpisanieCartochki(ishodnyeDannye)
 }
 
 dannyeCataloga().then(()=>{
-    podrobnoeOpisanieCartochki(ishodnyeDannye)
     sortirovkaPoCategorijam()
     animacija()
   }
