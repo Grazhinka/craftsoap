@@ -114,10 +114,18 @@ nav a:hover{
     margin: 5px;
     padding: 5px;  
 }
-.catalog img{
+/* .catalog img{
     width: 100px;
     height: 135px;
     box-shadow: 17.5px 17.5px 0px #fff, 18px 18px 0px rgb(219, 152, 52), 18px 17px 0px rgb(219, 152, 52), 17px 18px 0px rgb(219, 152, 52);
+} */
+.catalog img{
+    width: 150px;
+    height: 190px;
+    transition: all 1s ease;
+}
+.catalog img:hover{
+    scale: 1.2;
 }
 
 
