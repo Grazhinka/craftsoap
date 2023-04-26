@@ -132,47 +132,55 @@ function sortirovkaPoCategorijam(){
 //-----------------------------------------------------------------подробности карточки------------------------------------------------------------------
 
 
+
 function podrobnoeOpisanieCartochki(ishodnyeDannye){
-    let podrobnosti=document.querySelectorAll('.podrobnosti')
+    let nazhatieNaKnopku=document.querySelectorAll('.podrobnosti')
+    let nazhatieNaKartinku=document.querySelectorAll('.kart img')
+    let nazhatieNaNazvanie=document.querySelectorAll('.kart h3')
 
-    podrobnosti.forEach((it,index)=>{
-        it.addEventListener('click',()=>{
-            it.style.display='none'
-            const knopkaZakrytija=document.createElement('button')
-            const krestik=document.createElement('button')
-            knopkaZakrytija.textContent='закрыть'
-            krestik.textContent='X'
-            krestik.classList.add('krestik')
-            it.parentElement.classList.add('podrobnee')
-            it.parentElement.appendChild(knopkaZakrytija)
-            it.parentElement.appendChild(krestik)
-
-            const opisanie=document.createElement('p')
-            opisanie.innerHTML=`
-            <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
-            <br/>
-            <br/>
-            <span>Состав: </span>${ishodnyeDannye[index].sostav}
-            <br/>
-            <br/>
-            <span>Сварено: </span>${ishodnyeDannye[index].svareno}
-            `
-            it.parentElement.appendChild(opisanie)
-            it.parentElement.querySelector('h4').after(opisanie)
-
-            function close(){
-                it.parentElement.classList.remove('podrobnee')
-                it.parentElement.removeChild(knopkaZakrytija)
-                it.parentElement.removeChild(krestik)
-                it.parentElement.removeChild(opisanie)
-                it.style.display='block'
-                it.style.margin='0 auto'
-            }
-
-            knopkaZakrytija.addEventListener('click',close ) 
-            krestik.addEventListener('click',close ) 
+    function podrobno(podrobnosti){
+        podrobnosti.forEach((it,index)=>{
+            it.addEventListener('click',()=>{
+                nazhatieNaKnopku[index].style.display='none'
+                const knopkaZakrytija=document.createElement('button')
+                const krestik=document.createElement('button')
+                knopkaZakrytija.textContent='закрыть'
+                krestik.textContent='X'
+                krestik.classList.add('krestik')
+                it.parentElement.classList.add('podrobnee')
+                it.parentElement.appendChild(knopkaZakrytija)
+                it.parentElement.appendChild(krestik)
+    
+                const opisanie=document.createElement('p')
+                opisanie.innerHTML=`
+                <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+                <br/>
+                <br/>
+                <span>Состав: </span>${ishodnyeDannye[index].sostav}
+                <br/>
+                <br/>
+                <span>Сварено: </span>${ishodnyeDannye[index].svareno}
+                `
+                it.parentElement.appendChild(opisanie)
+                it.parentElement.querySelector('h4').after(opisanie)
+    
+                function close(){
+                    it.parentElement.classList.remove('podrobnee')
+                    it.parentElement.removeChild(knopkaZakrytija)
+                    it.parentElement.removeChild(krestik)
+                    it.parentElement.removeChild(opisanie)
+                    nazhatieNaKnopku[index].style.display='block'
+                    nazhatieNaKnopku[index].style.margin='0 auto'
+                }
+    
+                knopkaZakrytija.addEventListener('click',close ) 
+                krestik.addEventListener('click',close ) 
+            })
         })
-    })
+    }
+    podrobno(nazhatieNaKnopku)
+    podrobno(nazhatieNaKartinku)
+    podrobno(nazhatieNaNazvanie)
 }
 
 
@@ -181,21 +189,31 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
 
 //------------------------------------------------------------------анимация---------------------------------------------------------------------------
 function animacija(){
-    document.querySelectorAll(".podrobnosti").forEach(function(box) {
-        box.addEventListener("click", function() {
-          gsap.from(".podrobnee img", {
-            duration: 0.5, 
-            opacity: 0, 
-            scale:0.5
-          });
-          gsap.from(".podrobnee p", {
-            duration: 0.5, 
-            opacity: 0, 
-            x: -100, 
-            stagger:0.5,
-          });
+    let nazhatieNaKnopku=document.querySelectorAll('.podrobnosti')
+    let nazhatieNaKartinku=document.querySelectorAll('.kart img')
+    let nazhatieNaNazvanie=document.querySelectorAll('.kart h3')
+
+    function anima(animirovat){
+        animirovat.forEach(function(box) {
+            box.addEventListener("click", function() {
+              gsap.from(".podrobnee img", {
+                duration: 0.5, 
+                opacity: 0, 
+                scale:0.5
+              });
+              gsap.from(".podrobnee p", {
+                duration: 0.5, 
+                opacity: 0, 
+                x: -100, 
+                stagger:0.5,
+              });
+            });
         });
-    });
+    }
+
+    anima(nazhatieNaKartinku)
+    anima(nazhatieNaKnopku)
+    anima(nazhatieNaNazvanie)
 }
 
 
