@@ -26,11 +26,13 @@ nav a:hover{
 
 .zagolovok{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .zagolovok img{
     width: 90px;
+    margin-top: 5px;
 }
 .zagolovok h1{ 
     font-family: 'Satisfy', cursive;
@@ -122,8 +124,9 @@ nav a:hover{
 .catalog img{
     width: 150px;
     height: 190px;
-    transition: all 1s ease;
+    transition: scale 1s ease;
 }
+
 .catalog img:hover{
     scale: 1.2;
 }
@@ -142,8 +145,14 @@ nav a:hover{
 .podrobnee img{
     height: 350px;
     width: 280px;
-    box-shadow: none
+
 }
+.podrobnee img:hover{
+    transition: none;
+    scale: 1;
+}
+
+
 .podrobnee p{
     margin: 10px;
 }
