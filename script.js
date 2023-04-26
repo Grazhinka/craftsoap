@@ -99,6 +99,7 @@ function verstkaKataloga(ishodnyeDannye){
     let catalog=document.querySelector('.catalog')
     for(let i=0;i<ishodnyeDannye.length;i++){
         const kartochkaKataloga=document.createElement('div')
+        kartochkaKataloga.classList.add('kart')
         kartochkaKataloga.innerHTML=`
             <p>${ishodnyeDannye[i].title}</p>
             <h3 class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</h3>
@@ -138,9 +139,13 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
         it.addEventListener('click',()=>{
             it.style.display='none'
             const knopkaZakrytija=document.createElement('button')
+            const krestik=document.createElement('button')
             knopkaZakrytija.textContent='закрыть'
+            krestik.textContent='X'
+            krestik.classList.add('krestik')
             it.parentElement.classList.add('podrobnee')
             it.parentElement.appendChild(knopkaZakrytija)
+            it.parentElement.appendChild(krestik)
 
             const opisanie=document.createElement('p')
             opisanie.innerHTML=`
@@ -155,17 +160,24 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
             it.parentElement.appendChild(opisanie)
             it.parentElement.querySelector('h4').after(opisanie)
 
-
-            knopkaZakrytija.addEventListener('click',()=>{
+            function close(){
                 it.parentElement.classList.remove('podrobnee')
                 it.parentElement.removeChild(knopkaZakrytija)
+                it.parentElement.removeChild(krestik)
                 it.parentElement.removeChild(opisanie)
                 it.style.display='block'
                 it.style.margin='0 auto'
-            })
+            }
+
+            knopkaZakrytija.addEventListener('click',close ) 
+            krestik.addEventListener('click',close ) 
         })
     })
 }
+
+
+
+
 
 //------------------------------------------------------------------анимация---------------------------------------------------------------------------
 function animacija(){

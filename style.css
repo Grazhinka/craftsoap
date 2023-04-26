@@ -140,7 +140,6 @@ nav a:hover{
 }
 
 
-
 .knopkiKategorij{
     margin: 10px;
     position: sticky;
@@ -150,7 +149,7 @@ nav a:hover{
     z-index: 98;
 }
 
-.knopkiKategorij button, .podrobnosti, .podrobnee button{
+.knopkiKategorij button, .podrobnosti{
     font-family: 'Neucha', cursive;
     margin: 5px;
     border: 1px solid rgba(0, 0, 0, 0.605);
@@ -163,12 +162,40 @@ nav a:hover{
     font-size: 16px;
 }
 
-.knopkiKategorij button:hover, .podrobnosti:hover, .podrobnee button:hover{
+.knopkiKategorij button:hover, .podrobnosti:hover{
     transition: all 0.5s ease;
     font-size:18px;
     box-shadow: 10.5px 10.5px 0px #e9e9e9;
     padding: 3px;
 }
+
+.krestik{
+    position: fixed;
+    top:5px;
+    right: 5px;
+}
+.podrobnee button{
+    font-family: 'Neucha', cursive;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.605);
+    border-radius: 5px;
+    background-color:white;
+    padding: 4px;
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+.podrobnee button:hover{
+    transition: all 0.5s ease;
+    font-size:18px;
+    box-shadow: 10.5px 10.5px 0px #e9e9e9;
+}
+
+
+
+
 .podrobnosti{
     margin-bottom: 10px;
 }
@@ -228,6 +255,7 @@ nav a:hover{
         width: 200px;
         height: 260px;
     }
+    
     .cytataDiv{
         top: 30%;
     }
