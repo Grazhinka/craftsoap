@@ -3,22 +3,23 @@ const ssylka='https://db-craft-soap.glitch.me/'
 //const ssylka='https://db-soap.glitch.me/'
 
 async function dannyeCataloga(){
-    const adv = await fetch(`${ssylka}craftsoap`);
-    const ishodnyeDannye = await adv.json();
-    verstkaKataloga(ishodnyeDannye)
-    podrobnoeOpisanieCartochki(ishodnyeDannye)
-    const adv1 = await fetch(`${ssylka}craftsoap/dopinfo`);
-    const dopInfo = await adv1.json();
-    const categorii=dopInfo[0]
+    const dop = await fetch(`${ssylka}craftsoap/dopinfo`);
+    const dopInfo = await dop.json();
     const kartinkiDlaOboev=dopInfo[1]
     const cytaty=dopInfo[2]
+    const categorii=dopInfo[0]
 
-    knopkiKategorij(categorii)
+    const osnova = await fetch(`${ssylka}craftsoap`);
+    const ishodnyeDannye = await osnova.json();
+   
     oboi(kartinkiDlaOboev)  
     frazy(cytaty)
+    knopkiKategorij(categorii)
+    verstkaKataloga(ishodnyeDannye)  
 }
 
 dannyeCataloga().then(()=>{
+    podrobnoeOpisanieCartochki(ishodnyeDannye)
     sortirovkaPoCategorijam()
     animacija()
   }
@@ -103,7 +104,7 @@ function verstkaKataloga(ishodnyeDannye){
             <p class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</p>
             <p>${ishodnyeDannye[i].ves}</p>
             <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
-            <img src=${ishodnyeDannye[i].image} width='100px'/>
+            <img loading='lazy' src=${ishodnyeDannye[i].image} width='100px'/>
             <h4>${ishodnyeDannye[i].cena}</h4>
             <button class='podrobnosti'>Подробнее</button>
         `
