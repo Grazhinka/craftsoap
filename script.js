@@ -100,11 +100,11 @@ function verstkaKataloga(ishodnyeDannye){
     for(let i=0;i<ishodnyeDannye.length;i++){
         const kartochkaKataloga=document.createElement('div')
         kartochkaKataloga.innerHTML=`
-            <h2>${ishodnyeDannye[i].title}</h2>
-            <p class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</p>
+            <p>${ishodnyeDannye[i].title}</p>
+            <h3 class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</h3>
             <p>${ishodnyeDannye[i].ves}</p>
             <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
-            <img loading='lazy' src=${ishodnyeDannye[i].image} width='100px'/>
+            <img loading='lazy' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
             <h4>${ishodnyeDannye[i].cena}</h4>
             <button class='podrobnosti'>Подробнее</button>
         `
@@ -130,6 +130,7 @@ function sortirovkaPoCategorijam(){
 
 //-----------------------------------------------------------------подробности карточки------------------------------------------------------------------
 
+
 function podrobnoeOpisanieCartochki(ishodnyeDannye){
     let podrobnosti=document.querySelectorAll('.podrobnosti')
 
@@ -143,22 +144,22 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
 
             const opisanie=document.createElement('p')
             opisanie.innerHTML=`
-            <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}`
+            <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+            <br/>
+            <br/>
+            <span>Состав: </span>${ishodnyeDannye[index].sostav}
+            <br/>
+            <br/>
+            <span>Сварено: </span>${ishodnyeDannye[index].svareno}
+            `
             it.parentElement.appendChild(opisanie)
             it.parentElement.querySelector('h4').after(opisanie)
 
-
-            const sostav=document.createElement('p')
-            sostav.innerHTML=`
-            <span>Состав: </span>${ishodnyeDannye[index].sostav}`
-            it.parentElement.appendChild(sostav)
-            it.parentElement.querySelector('h4').after(sostav)
 
             knopkaZakrytija.addEventListener('click',()=>{
                 it.parentElement.classList.remove('podrobnee')
                 it.parentElement.removeChild(knopkaZakrytija)
                 it.parentElement.removeChild(opisanie)
-                it.parentElement.removeChild(sostav)
                 it.style.display='block'
                 it.style.margin='0 auto'
             })
