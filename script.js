@@ -25,8 +25,6 @@ dannyeCataloga().then(()=>{
   }
 )
 
-
-
 //-----------------------------------------------------------------картинки в движении------------------------------------------------------------------
 
 function oboi(kartinkiDlaOboev){
@@ -92,7 +90,6 @@ function knopkiKategorij(categorii){
     }
 }
 
-
 //-----------------------------------------------------------------верстка каталога------------------------------------------------------------------
 
 function verstkaKataloga(ishodnyeDannye){
@@ -112,6 +109,8 @@ function verstkaKataloga(ishodnyeDannye){
         catalog.appendChild(kartochkaKataloga)
     }
 }
+
+
 //<img src=${ssylka}/${ishodnyeDannye[i].image} width='100px'/>
 //-----------------------------------------------------------------сортировка по категориям------------------------------------------------------------------
 
@@ -131,8 +130,6 @@ function sortirovkaPoCategorijam(){
 
 //-----------------------------------------------------------------подробности карточки------------------------------------------------------------------
 
-
-
 function podrobnoeOpisanieCartochki(ishodnyeDannye){
     let nazhatieNaKnopku=document.querySelectorAll('.podrobnosti')
     let nazhatieNaKartinku=document.querySelectorAll('.kart img')
@@ -140,51 +137,57 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
 
     function podrobno(podrobnosti){
         podrobnosti.forEach((it,index)=>{
-            it.addEventListener('click',()=>{
-                nazhatieNaKnopku[index].style.display='none'
-                const knopkaZakrytija=document.createElement('button')
-                const krestik=document.createElement('button')
-                knopkaZakrytija.textContent='закрыть'
-                krestik.textContent='X'
-                krestik.classList.add('krestik')
-                it.parentElement.classList.add('podrobnee')
-                it.parentElement.appendChild(knopkaZakrytija)
-                it.parentElement.appendChild(krestik)
-    
-                const opisanie=document.createElement('p')
-                opisanie.innerHTML=`
-                <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
-                <br/>
-                <br/>
-                <span>Состав: </span>${ishodnyeDannye[index].sostav}
-                <br/>
-                <br/>
-                <span>Сварено: </span>${ishodnyeDannye[index].svareno}
-                `
-                it.parentElement.appendChild(opisanie)
-                it.parentElement.querySelector('h4').after(opisanie)
-    
-                function close(){
-                    it.parentElement.classList.remove('podrobnee')
-                    it.parentElement.removeChild(knopkaZakrytija)
-                    it.parentElement.removeChild(krestik)
-                    it.parentElement.removeChild(opisanie)
-                    nazhatieNaKnopku[index].style.display='block'
-                    nazhatieNaKnopku[index].style.margin='0 auto'
+            it.addEventListener('click',function h(){
+                if(!it.parentElement.classList.contains('podrobnee')){
+                    nazhatieNaKnopku[index].style.display='none'
+                    const knopkaZakrytija=document.createElement('button')
+                    const krestik=document.createElement('button')
+                    knopkaZakrytija.textContent='закрыть'
+                    krestik.textContent='X'
+                    krestik.classList.add('krestik')
+                    it.parentElement.classList.add('podrobnee')
+                    it.parentElement.appendChild(knopkaZakrytija)
+                    it.parentElement.appendChild(krestik)
+                    
+                    
+        
+                    const opisanie=document.createElement('p')
+                    opisanie.innerHTML=`
+                    <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+                    <br/>
+                    <br/>
+                    <span>Состав: </span>${ishodnyeDannye[index].sostav}
+                    <br/>
+                    <br/>
+                    <span>Сварено: </span>${ishodnyeDannye[index].svareno}
+                    `
+                    it.parentElement.appendChild(opisanie)
+                    it.parentElement.querySelector('h4').after(opisanie)
+
+
+                    
+
+                    knopkaZakrytija.addEventListener('click',close ) 
+                    krestik.addEventListener('click',close ) 
+
+                    function close(){
+                        it.parentElement.classList.remove('podrobnee')
+                        it.parentElement.removeChild(knopkaZakrytija)
+                        it.parentElement.removeChild(krestik)
+                        it.parentElement.removeChild(opisanie)
+                        nazhatieNaKnopku[index].style.display='block'
+                        nazhatieNaKnopku[index].style.margin='0 auto'
+                    } 
                 }
-    
-                knopkaZakrytija.addEventListener('click',close ) 
-                krestik.addEventListener('click',close ) 
-            })
+            }) 
+            
         })
+        
     }
     podrobno(nazhatieNaKnopku)
-    podrobno(nazhatieNaKartinku)
     podrobno(nazhatieNaNazvanie)
+    podrobno(nazhatieNaKartinku)
 }
-
-
-
 
 
 //------------------------------------------------------------------анимация---------------------------------------------------------------------------
