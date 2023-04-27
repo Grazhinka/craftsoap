@@ -92,24 +92,47 @@ function knopkiKategorij(categorii){
 
 //-----------------------------------------------------------------верстка каталога------------------------------------------------------------------
 
+// function verstkaKataloga(ishodnyeDannye){
+//     let catalog=document.querySelector('.catalog')
+//     for(let i=0;i<ishodnyeDannye.length;i++){
+//         const kartochkaKataloga=document.createElement('div')
+//         kartochkaKataloga.classList.add('kart')
+//         kartochkaKataloga.innerHTML=`
+//             <div>
+//             <p>${ishodnyeDannye[i].title}</p>
+//             <h3 class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</h3>
+//             <p>${ishodnyeDannye[i].ves}</p>
+//             <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
+//             <img loading='lazy' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
+//             <h4>${ishodnyeDannye[i].cena}</h4>
+//             <button class='podrobnosti'>Подробнее</button>
+//             </div>
+//         `
+//         catalog.appendChild(kartochkaKataloga)
+//     }
+// }
+
 function verstkaKataloga(ishodnyeDannye){
     let catalog=document.querySelector('.catalog')
     for(let i=0;i<ishodnyeDannye.length;i++){
         const kartochkaKataloga=document.createElement('div')
         kartochkaKataloga.classList.add('kart')
         kartochkaKataloga.innerHTML=`
-            <p>${ishodnyeDannye[i].title}</p>
-            <h3 class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</h3>
-            <p>${ishodnyeDannye[i].ves}</p>
-            <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
-            <img loading='lazy' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
-            <h4>${ishodnyeDannye[i].cena}</h4>
-            <button class='podrobnosti'>Подробнее</button>
+            
+                <p>${ishodnyeDannye[i].title}</p>
+                <h3 class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</h3>
+                <p>${ishodnyeDannye[i].ves}</p>
+                <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
+                <div class='big'>
+                    <img loading='lazy' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
+                </div>
+                <h4><span>Цена: </span>${ishodnyeDannye[i].cena}</h4>
+                <button class='podrobnosti'>Подробнее</button>
+            
         `
         catalog.appendChild(kartochkaKataloga)
     }
 }
-
 
 //<img src=${ssylka}/${ishodnyeDannye[i].image} width='100px'/>
 //-----------------------------------------------------------------сортировка по категориям------------------------------------------------------------------
@@ -130,6 +153,65 @@ function sortirovkaPoCategorijam(){
 
 //-----------------------------------------------------------------подробности карточки------------------------------------------------------------------
 
+// function podrobnoeOpisanieCartochki(ishodnyeDannye){
+//     let nazhatieNaKnopku=document.querySelectorAll('.podrobnosti')
+//     let nazhatieNaKartinku=document.querySelectorAll('.kart img')
+//     let nazhatieNaNazvanie=document.querySelectorAll('.kart h3')
+
+//     function podrobno(podrobnosti){
+//         podrobnosti.forEach((it,index)=>{
+//             it.addEventListener('click',function h(){
+//                 if(!it.parentElement.classList.contains('podrobnee')){
+//                     nazhatieNaKnopku[index].style.display='none'
+//                     const knopkaZakrytija=document.createElement('button')
+//                     const krestik=document.createElement('button')
+//                     knopkaZakrytija.textContent='закрыть'
+//                     krestik.textContent='X'
+//                     krestik.classList.add('krestik')
+//                     it.parentElement.classList.add('podrobnee')
+//                     it.parentElement.appendChild(knopkaZakrytija)
+//                     it.parentElement.appendChild(krestik)
+                    
+                    
+        
+//                     const opisanie=document.createElement('p')
+//                     opisanie.innerHTML=`
+//                     <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+//                     <br/>
+//                     <br/>
+//                     <span>Состав: </span>${ishodnyeDannye[index].sostav}
+//                     <br/>
+//                     <br/>
+//                     <span>Сварено: </span>${ishodnyeDannye[index].svareno}
+//                     `
+//                     it.parentElement.appendChild(opisanie)
+//                     it.parentElement.querySelector('h4').after(opisanie)
+
+
+                    
+
+//                     knopkaZakrytija.addEventListener('click',close ) 
+//                     krestik.addEventListener('click',close ) 
+
+//                     function close(){
+//                         it.parentElement.classList.remove('podrobnee')
+//                         it.parentElement.removeChild(knopkaZakrytija)
+//                         it.parentElement.removeChild(krestik)
+//                         it.parentElement.removeChild(opisanie)
+//                         nazhatieNaKnopku[index].style.display='block'
+//                         nazhatieNaKnopku[index].style.margin='0 auto'
+//                     } 
+//                 }
+//             }) 
+            
+//         })
+        
+//     }
+//     podrobno(nazhatieNaKnopku)
+//     podrobno(nazhatieNaNazvanie)
+//     podrobno(nazhatieNaKartinku)
+// }
+
 function podrobnoeOpisanieCartochki(ishodnyeDannye){
     let nazhatieNaKnopku=document.querySelectorAll('.podrobnosti')
     let nazhatieNaKartinku=document.querySelectorAll('.kart img')
@@ -139,6 +221,7 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
         podrobnosti.forEach((it,index)=>{
             it.addEventListener('click',function h(){
                 if(!it.parentElement.classList.contains('podrobnee')){
+                    const roditel=document.querySelectorAll('.big')
                     nazhatieNaKnopku[index].style.display='none'
                     const knopkaZakrytija=document.createElement('button')
                     const krestik=document.createElement('button')
@@ -152,6 +235,7 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
                     
         
                     const opisanie=document.createElement('p')
+                    opisanie.classList.add('opisanie')
                     opisanie.innerHTML=`
                     <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
                     <br/>
@@ -161,8 +245,8 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
                     <br/>
                     <span>Сварено: </span>${ishodnyeDannye[index].svareno}
                     `
-                    it.parentElement.appendChild(opisanie)
-                    it.parentElement.querySelector('h4').after(opisanie)
+                    roditel[index].appendChild(opisanie)
+                    //it.parentElement.querySelector('h4').after(opisanie)
 
 
                     
@@ -174,8 +258,59 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
                         it.parentElement.classList.remove('podrobnee')
                         it.parentElement.removeChild(knopkaZakrytija)
                         it.parentElement.removeChild(krestik)
-                        it.parentElement.removeChild(opisanie)
                         nazhatieNaKnopku[index].style.display='block'
+                        roditel[index].removeChild(opisanie)
+                        nazhatieNaKnopku[index].style.margin='0 auto'
+                    } 
+                }
+            }) 
+            
+        })
+        
+    }
+    function podrobno2(podrobnosti){
+        podrobnosti.forEach((it,index)=>{
+            it.addEventListener('click',function h(){
+                if(!it.parentElement.parentElement.classList.contains('podrobnee')){
+                    const roditel=document.querySelectorAll('.big')
+                    nazhatieNaKnopku[index].style.display='none'
+                    const knopkaZakrytija=document.createElement('button')
+                    const krestik=document.createElement('button')
+                    knopkaZakrytija.textContent='закрыть'
+                    krestik.textContent='X'
+                    krestik.classList.add('krestik')
+                    it.parentElement.parentElement.classList.add('podrobnee')
+                    it.parentElement.parentElement.appendChild(knopkaZakrytija)
+                    it.parentElement.parentElement.appendChild(krestik)
+                    
+                    
+        
+                    const opisanie=document.createElement('p')
+                    opisanie.classList.add('opisanie')
+                    opisanie.innerHTML=`
+                    <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+                    <br/>
+                    <br/>
+                    <span>Состав: </span>${ishodnyeDannye[index].sostav}
+                    <br/>
+                    <br/>
+                    <span>Сварено: </span>${ishodnyeDannye[index].svareno}
+                    `
+                    roditel[index].appendChild(opisanie)
+                    //it.parentElement.querySelector('h4').after(opisanie)
+
+
+                    
+
+                    knopkaZakrytija.addEventListener('click',close ) 
+                    krestik.addEventListener('click',close ) 
+
+                    function close(){
+                        it.parentElement.parentElement.classList.remove('podrobnee')
+                        it.parentElement.parentElement.removeChild(knopkaZakrytija)
+                        it.parentElement.parentElement.removeChild(krestik)
+                        nazhatieNaKnopku[index].style.display='block'
+                        roditel[index].removeChild(opisanie)
                         nazhatieNaKnopku[index].style.margin='0 auto'
                     } 
                 }
@@ -186,7 +321,7 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
     }
     podrobno(nazhatieNaKnopku)
     podrobno(nazhatieNaNazvanie)
-    podrobno(nazhatieNaKartinku)
+    podrobno2(nazhatieNaKartinku)
 }
 
 
@@ -200,15 +335,18 @@ function animacija(){
         animirovat.forEach(function(box) {
             box.addEventListener("click", function() {
               gsap.from(".podrobnee img", {
-                duration: 0.5, 
+                // duration: 0.5, 
+                // opacity: 0, 
+                // scale:0.5
+                duration: 1, 
                 opacity: 0, 
-                scale:0.5
+                x: 150,
               });
               gsap.from(".podrobnee p", {
-                duration: 0.5, 
+                duration: 1, 
                 opacity: 0, 
-                x: -100, 
-                stagger:0.5,
+                x: -150, 
+                //stagger:0.5,
               });
             });
         });

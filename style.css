@@ -5,9 +5,10 @@ body{
 
 a, span, .color{
     color: rgb(219, 152, 52);
+    font-weight:lighter;
 }
 p{
-    font-size: 18px;
+    font-size: 17px;
 }
 
 nav{
@@ -18,7 +19,7 @@ nav a{
     text-decoration: none;
     padding: 5px;
 }
-nav a:hover{
+nav a:hover, .kart h3:hover{
     color: black;
     cursor: pointer;
 }
@@ -111,7 +112,7 @@ nav a:hover{
     flex-wrap: wrap;
     z-index: 1;
 }
-.catalog div{
+.catalog .kart{
     border: 1px solid rgba(0, 0, 0, 0.363);
     min-width: 300px;
     margin: 5px;
@@ -143,6 +144,14 @@ nav a:hover{
     background: rgb(255, 255, 255);
     padding:10px;
 }
+
+.podrobnee .big{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
 .podrobnee img{
     height: 350px;
     width: 280px;
@@ -153,8 +162,10 @@ nav a:hover{
 }
 
 
-.podrobnee p{
-    margin: 10px;
+.opisanie{
+    max-width: 400px;
+    text-align: justify;
+    padding: 10px;
 }
 
 
