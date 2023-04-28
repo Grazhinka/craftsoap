@@ -11,6 +11,13 @@ p{
     font-size: 17px;
 }
 
+h1{
+    font-family: 'Neucha', cursive;
+    font-weight: lighter;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
 nav{
     display: flex;
     justify-content: space-evenly;
@@ -34,17 +41,8 @@ nav a:hover, .kart h3:hover{
     width: 90px;
     margin-top: 5px;
 }
-.zagolovok h1{ 
-    font-family: 'Satisfy', cursive;
-    text-align: center;
-    font-size: 40px;
-    margin: 2px;
-}
-.zagolovok p{
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
+
+
 
 
 .kartinkiVDvizhenii{
