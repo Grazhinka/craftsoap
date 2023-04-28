@@ -101,7 +101,7 @@ function verstkaKataloga(ishodnyeDannye){
                 <p>${ishodnyeDannye[i].ves}</p>
                 <h5 class='vyborKategorii'>${ishodnyeDannye[i].category}</h5>
                 <div class='big'>
-                    <img loading='lazy' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
+                    <img loading='lazy' alt='подарок гродно' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
                 </div>
                 <h4><span>Цена: </span>${ishodnyeDannye[i].cena}</h4>
                 <button class='podrobnosti'>Подробнее</button>

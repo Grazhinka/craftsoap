@@ -24,7 +24,6 @@ nav a:hover, .kart h3:hover{
     cursor: pointer;
 }
 
-
 .zagolovok{
     display: flex;
     flex-direction: column;
