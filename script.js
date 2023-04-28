@@ -94,8 +94,7 @@ function verstkaKataloga(ishodnyeDannye){
     for(let i=0;i<ishodnyeDannye.length;i++){
         const kartochkaKataloga=document.createElement('div')
         kartochkaKataloga.classList.add('kart')
-        kartochkaKataloga.innerHTML=`
-            
+        kartochkaKataloga.innerHTML=` 
                 <p>${ishodnyeDannye[i].title}</p>
                 <h3 class='color'>${ishodnyeDannye[i].kratkoeOpisanie}</h3>
                 <p>${ishodnyeDannye[i].ves}</p>
@@ -104,10 +103,17 @@ function verstkaKataloga(ishodnyeDannye){
                     <img loading='lazy' alt='подарок гродно' src=${ishodnyeDannye[i].image} height='150px' width='100px'/>
                 </div>
                 <h4><span>Цена: </span>${ishodnyeDannye[i].cena}</h4>
-                <button class='podrobnosti'>Подробнее</button>
-            
+                <button class='podrobnosti'>Подробнее</button>  
         `
         catalog.appendChild(kartochkaKataloga)
+
+        if(ishodnyeDannye[i].nalichie==='продано'){
+            const lenta=document.createElement('div')
+            lenta.classList.add('corner')
+            lenta.classList.add('corner-right')
+            lenta.innerHTML=`<span>sold out</span>`
+            kartochkaKataloga.appendChild(lenta)
+        }
     }
 }
 
@@ -146,9 +152,14 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
                     knopkaZakrytija.textContent='закрыть'
                     krestik.textContent='X'
                     krestik.classList.add('krestik')
+                    rod[index].classList.remove('kart')
                     rod[index].classList.add('podrobnee')
                     rod[index].appendChild(knopkaZakrytija)
                     rod[index].appendChild(krestik)
+                    if(rod[index].querySelector('.corner')){
+                        rod[index].querySelector('.corner').style.display='none'
+                    }
+
 
                     const naGlavnuju=document.createElement('button')
                     naGlavnuju.textContent='НА ГЛАВНУЮ'
@@ -167,7 +178,7 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
                     <span>Сварено: </span>${ishodnyeDannye[index].svareno}
                     `
                     roditel[index].appendChild(opisanie)
-  
+
 
                     knopkaZakrytija.addEventListener('click',close ) 
                     krestik.addEventListener('click',close ) 
@@ -175,9 +186,15 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
 
                     function close(){
                         rod[index].classList.remove('podrobnee')
+                        rod[index].classList.add('kart')
                         rod[index].removeChild(knopkaZakrytija)
                         rod[index].removeChild(krestik)
                         rod[index].removeChild(naGlavnuju)
+
+                        if(rod[index].querySelector('.corner')){
+                           rod[index].querySelector('.corner').style.display='inline-block'
+                        }
+                        
                         nazhatieNaKnopku[index].style.display='block'
                         roditel[index].removeChild(opisanie)
                         nazhatieNaKnopku[index].style.margin='0 auto'
@@ -235,3 +252,6 @@ for (let smoothLink of smoothLinks) {
         });
     });
 };
+
+
+

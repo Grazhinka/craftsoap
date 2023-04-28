@@ -112,6 +112,7 @@ nav a:hover, .kart h3:hover{
     z-index: 1;
 }
 .catalog .kart{
+    position: relative;
     border: 1px solid rgba(0, 0, 0, 0.363);
     min-width: 300px;
     margin: 5px;
@@ -293,6 +294,62 @@ form div{
 #submit{
     background-color: rgb(219, 152, 52);
 }
+
+
+
+
+
+.corner {
+    width: 100px;
+    height:100px;
+    overflow: hidden;
+    position: absolute;
+}
+.corner::before, .corner::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid rgb(219, 152, 52);
+}
+.corner span {  
+    position: absolute;
+    width: 225px;
+    padding: 10px 0px;
+    background-color: rgb(219, 152, 52);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+.corner-right {
+    top: -10px;
+    right: -10px;
+}
+.corner-right::before, .corner-right::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+.corner-right::before {
+    top: 0;
+    left: 0;
+}
+.corner-right::after {
+    right: 0;
+    bottom: 0;
+}
+.corner-right span {
+    left: -47px;
+    top: 18px;
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
 
 
 
