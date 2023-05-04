@@ -168,15 +168,24 @@ function podrobnoeOpisanieCartochki(ishodnyeDannye){
 
                     const opisanie=document.createElement('p')
                     opisanie.classList.add('opisanie')
-                    opisanie.innerHTML=`
-                    <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
-                    <br/>
-                    <br/>
-                    <span>Состав: </span>${ishodnyeDannye[index].sostav}
-                    <br/>
-                    <br/>
-                    <span>Сварено: </span>${ishodnyeDannye[index].svareno}
-                    `
+                    if(ishodnyeDannye[index].svareno===' '){
+                        opisanie.innerHTML=`
+                        <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+                        <br/>
+                        <br/>
+                        <span>Состав: </span>${ishodnyeDannye[index].sostav}
+                        `
+                    }else{
+                        opisanie.innerHTML=`
+                        <span>Описание: </span>${ishodnyeDannye[index].polnoeOpisanie}
+                        <br/>
+                        <br/>
+                        <span>Состав: </span>${ishodnyeDannye[index].sostav}
+                        <br/>
+                        <br/>
+                        <span>Сварено: </span>${ishodnyeDannye[index].svareno}
+                        `
+                    }
                     roditel[index].appendChild(opisanie)
 
 
